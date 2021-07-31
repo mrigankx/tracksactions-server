@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -14,9 +17,7 @@
     "mongoose": "^5.13.2"
   },
   "devDependencies": {},
-  "scripts": {
-    "start": "nodemon index.js"
-  },
+  
   "author": "mrigankx",
   "license": "ISC"
 }
