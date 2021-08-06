@@ -13,7 +13,8 @@ export const getexpenses = async (req, res) => {
 }
 export const createexpenses = async (req, res) => {
     try {
-        const { username, spent_category, spent_on, amount } = req.body;
+        const { username, spent_category, spent_on, amount, entrydate } = req.body;
+        console.log(req.body);
         const isExist = await User.findOne({ email: username });
         if (!isExist) {
             return res.status(401).json({ status: "error", body: null, msg: "User not found", error: "User not found" });
@@ -22,7 +23,8 @@ export const createexpenses = async (req, res) => {
             username,
             spent_category,
             spent_on,
-            amount
+            amount,
+            entrydate
         });
         await newdata.save();
         return res.status(201).json({ status: "ok", body: null, msg: "Expenses Added Successfully", error: null });
