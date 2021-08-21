@@ -16,7 +16,6 @@ const userDataSchema = new mongoose.Schema({
     },
     spent_on: {
         type: String,
-        required: true,
     },
     amount: {
         type: Number,
