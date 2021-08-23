@@ -10,7 +10,7 @@ const ensureLoggedin = async (req, res, next) => {
 
     } catch (err) {
         return res.status(401).json({ status: "error", body: null, msg: "Unauthorized access", error: "Unauthorized User" }).send("Unauthorized");
-        // console.log(err);
+        console.log(err);
     }
 };
 export default ensureLoggedin;

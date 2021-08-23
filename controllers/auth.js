@@ -51,7 +51,7 @@ export const signup = async (req, res) => {
         await newMaxBalance.save();
         const token = jwt.sign({ email },
             process.env.SECRET_KEY,
-            { expiresIn: "1h" }
+            { expiresIn: "3h" }
         );
         const data = { ...newUser._doc, token };
         return res.status(201).json({ status: "ok", body: data, msg: "User Registered Successfully", error: null });
